@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Playlist Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="dark">
+    <div class="container">
+        <!-- Header with brand capsule left and theme toggle + actions right -->
+        <header id="pageHeader" data-theme="dark">
+          <div class="left">
+            <div class="brand-capsule" aria-hidden="true">
+              <div class="brand-text">HUMANITYWOOD</div>
+            </div>
+          </div>
+
+          <div class="header-actions" aria-hidden="false">
+            <!-- keep order: links then nice theme toggle -->
+            <a class="btn" href="https://linktr.ee/" target="_blank" rel="noopener">Linktree</a>
+            <a class="btn" href="https://www.notion.com/" target="_blank" rel="noopener">Notion</a>
+
+            <!-- Theme toggle on right with emoji and animated slider -->
+            <div class="theme-toggle" id="themeToggle" role="button" aria-label="Toggle theme" title="Toggle theme">
+              <div class="theme-icons" aria-hidden="true"><span>🌙</span><span>☀️</span></div>
+              <div class="theme-slider" id="themeSlider">🌙</div>
+            </div>
+          </div>
+        </header>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>YouTube Playlist Hub</h1>
+            <p class="subtitle">Curated educational content organized for easy discovery</p>
+            <div class="stats">
+                Total Playlists = <span id="total-count">0</span> • Showing = <span id="showing-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="filters-section">
+            <div class="filter-header">
+                <i class="fas fa-filter"></i>
+                <h2>Filter</h2>
+            </div>
+            <div class="filter-group">
+                <h3><i class="fas fa-layer-group"></i> Categories</h3>
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">
+                        <i class="fas fa-layer-group"></i> All Content
+                    </button>
+                    <button class="filter-btn" data-category="VVIMP">
+                        <i class="fas fa-crown"></i> VVIMP
+                    </button>
+                    <button class="filter-btn" data-category="Video">
+                        <i class="fas fa-video"></i> Video
+                    </button>
+                    <button class="filter-btn" data-category="Film">
+                        <i class="fas fa-film"></i> Film
+                    </button>
+                    <button class="filter-btn" data-category="Music">
+                        <i class="fas fa-music"></i> Music
+                    </button>
+                    <button class="filter-btn" data-category="World">
+                        <i class="fas fa-globe"></i> World
+                    </button>
+                    <button class="filter-btn" data-category="Guru">
+                        <i class="fas fa-user-graduate"></i> Guru
+                    </button>
+                    <button class="filter-btn" data-category="Politics">
+                        <i class="fas fa-landmark"></i> Politics
+                    </button>
+                    <button class="filter-btn" data-category="Expose">
+                        <i class="fas fa-eye"></i> Expose
+                    </button>
+                    <button class="filter-btn" data-category="Biography">
+                        <i class="fas fa-book-open"></i> Biography
+                    </button>
+                    <button class="filter-btn" data-category="Family">
+                        <i class="fas fa-home"></i> Family
+                    </button>
+                    <button class="filter-btn" data-category="Book">
+                        <i class="fas fa-book"></i> Book
+                    </button>
+                    <button class="filter-btn" data-category="Philosophy">
+                        <i class="fas fa-brain"></i> Philosophy
+                    </button>
+                    <button class="filter-btn" data-category="Hinduism">
+                        <i class="fas fa-om"></i> Hinduism
+                    </button>
+                    <button class="filter-btn" data-category="Religion">
+                        <i class="fas fa-pray"></i> Religion
+                    </button>
+                    <button class="filter-btn" data-category="Upnishad">
+                        <i class="fas fa-yin-yang"></i> Upnishad
+                    </button>
+                    <button class="filter-btn" data-category="Sanatan Dharma">
+                        <i class="fas fa-dharmachakra"></i> Sanatan Dharma
+                    </button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3><i class="fas fa-bolt"></i> Impact</h3>
+                <div class="impact-filters">
+                    <label class="checkbox-label">
+                        <input type="checkbox" value="Positive" checked>
+                        <span class="checkbox-custom"></span>
+                        ✅ Positive
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" value="Negative" checked>
+                        <span class="checkbox-custom"></span>
+                        ❌ Negative
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" value="Neutral" checked>
+                        <span class="checkbox-custom"></span>
+                        ⚪ Neutral
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3><i class="fas fa-chart-line"></i> Usefulness</h3>
+                <div class="usefulness-filters">
+                    <label class="checkbox-label">
+                        <input type="checkbox" value="Average" checked>
+                        <span class="checkbox-custom"></span>
+                        👍 Average
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" value="High" checked>
+                        <span class="checkbox-custom"></span>
+                        ⚡ High
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" value="Very High" checked>
+                        <span class="checkbox-custom"></span>
+                        ✅ Very High
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <section class="playlists-container" id="playlists-container">
+            <!-- Playlist cards will be dynamically inserted here -->
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
